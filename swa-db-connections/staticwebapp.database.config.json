@@ -1,0 +1,137 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.8.51/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "Server=tcp:forsitesample.database.windows.net,1433;Initial Catalog=ForesiteSample;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;Authentication='Active Directory Default';",
+    "options": {
+      "set-session-context": false
+    }
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/rest"
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "StaticWebApps"
+      },
+      "mode": "production"
+    }
+  },
+"entities": {
+  "Site": {
+    "source": {
+      "object": "dbo.ForesiteSites",
+      "type": "table"
+    },
+    "graphql": {
+      "enabled": true,
+      "type": {
+        "singular": "Site",
+        "plural": "Sites"
+      }
+    },
+    "rest": {
+      "enabled": true
+    },
+    "permissions": [
+      {
+        "role": "anonymous",
+        "actions": [
+          {
+            "action": "*"
+          }
+        ]
+      }
+    ]
+  },
+  "Organization": {
+    "source": {
+      "object": "dbo.ForesiteOrgs",
+      "type": "table"
+    },
+    "graphql": {
+      "enabled": true,
+      "type": {
+        "singular": "Organization",
+        "plural": "Organizations"
+      }
+    },
+    "rest": {
+      "enabled": true
+    },
+    "permissions": [
+      {
+        "role": "anonymous",
+        "actions": [
+          {
+            "action": "*"
+          }
+        ]
+      }
+    ]
+  },
+  "Workflow": {
+    "source": {
+      "object": "dbo.ForesiteWorkflows",
+      "type": "table"
+    },
+    "graphql": {
+      "enabled": true,
+      "type": {
+        "singular": "Workflow",
+        "plural": "Workflows"
+      }
+    },
+    "rest": {
+      "enabled": true
+    },
+    "permissions": [
+      {
+        "role": "anonymous",
+        "actions": [
+          {
+            "action": "*"
+          }
+        ]
+      }
+    ]
+  },
+  "Unit": {
+    "source": {
+      "object": "dbo.ForesiteUnits",
+      "type": "table"
+    },
+    "graphql": {
+      "enabled": true,
+      "type": {
+        "singular": "Unit",
+        "plural": "Units"
+      }
+    },
+    "rest": {
+      "enabled": true
+    },
+    "permissions": [
+      {
+        "role": "anonymous",
+        "actions": [
+          {
+            "action": "*"
+          }
+        ]
+      }
+    ]
+  }
+}
+}
