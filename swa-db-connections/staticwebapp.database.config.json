@@ -1,5 +1,5 @@
 {
-  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.8.51/dab.draft.schema.json",
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/latest/dab.draft.schema.json",
   "data-source": {
     "database-type": "mssql",
     "connection-string": "Server=tcp:forsitesample.database.windows.net,1433;Initial Catalog=ForesiteSample;Persist Security Info=False;User ID=CloudSA763329b9;Password=)$8u4QrR-?q\":,p;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30",
