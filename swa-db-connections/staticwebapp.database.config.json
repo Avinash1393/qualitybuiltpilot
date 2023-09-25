@@ -53,7 +53,19 @@
           }
         ]
       }
-    ]
+    ],
+    "relationships": {
+      "Organizations": {
+        "cardinality": "one",
+        "target.entity": "Organization",
+        "source.fields": [
+          "OrganizationId"
+        ],
+        "target.fields": [
+          "OrganizationId"
+        ]
+      }
+    }
   },
   "Organization": {
     "source": {
